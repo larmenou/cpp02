@@ -6,7 +6,7 @@
 /*   By: larmenou <larmenou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 11:19:48 by larmenou          #+#    #+#             */
-/*   Updated: 2023/12/13 11:59:26 by larmenou         ###   ########.fr       */
+/*   Updated: 2023/12/21 13:14:09 by larmenou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ Fixed::Fixed()
 Fixed::Fixed(const int i)
 {
 	std::cout << "Int constructor called" << std::endl;
-	this->_fixed_point = i << this->_nb_frac_bit;
+	this->_fixed_point = i /* / (1 << this->_nb_frac_bit) */;
 	return ;
 }
 
@@ -33,7 +33,7 @@ Fixed::Fixed(const float f)
 	return ;
 }
 
-Fixed::Fixed(Fixed& copy)
+Fixed::Fixed(const Fixed& copy)
 {
 	std::cout << "Copy constructor called" << std::endl;
 	this->_fixed_point = copy.getRawBits();
@@ -69,4 +69,9 @@ void Fixed::setRawBits(int const raw)
 {
 	this->_fixed_point = raw;
 	return ;
+}
+
+int Fixed::toInt(void) const
+{
+	return (this->getRawBits() / (1 << this->_nb_frac_bit));
 }
