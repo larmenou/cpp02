@@ -6,7 +6,7 @@
 /*   By: larmenou <larmenou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 11:19:48 by larmenou          #+#    #+#             */
-/*   Updated: 2023/12/21 13:14:09 by larmenou         ###   ########.fr       */
+/*   Updated: 2023/12/27 12:26:23 by larmenou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,21 +22,21 @@ Fixed::Fixed()
 Fixed::Fixed(const int i)
 {
 	std::cout << "Int constructor called" << std::endl;
-	this->_fixed_point = i /* / (1 << this->_nb_frac_bit) */;
+	this->_fixed_point = i << this->_nb_frac_bit;
 	return ;
 }
 
 Fixed::Fixed(const float f)
 {
 	std::cout << "Float constructor called" << std::endl;
-	this->_fixed_point = f;
+	this->_fixed_point = static_cast<int>(f * (1 << _nb_frac_bit));
 	return ;
 }
 
 Fixed::Fixed(const Fixed& copy)
 {
 	std::cout << "Copy constructor called" << std::endl;
-	this->_fixed_point = copy.getRawBits();
+	*this = copy;
 	return ;
 }
 
@@ -49,14 +49,13 @@ Fixed::~Fixed()
 Fixed& Fixed::operator=(const Fixed& copy)
 {
 	std::cout << "Copy assignement operator called" << std::endl;
-	if (this != &copy)
-		this->_fixed_point = copy._fixed_point;
+	setRawBits(copy.getRawBits());
 	return (*this);
 }
 
 std::ostream& operator<<(std::ostream& os, const Fixed& f)
 {
-	os << f.getRawBits();
+	os << f.toFloat();
 	return (os);
 }
 
@@ -73,5 +72,10 @@ void Fixed::setRawBits(int const raw)
 
 int Fixed::toInt(void) const
 {
-	return (this->getRawBits() / (1 << this->_nb_frac_bit));
+	return (this->_fixed_point >> this->_nb_frac_bit);
+}
+
+float Fixed::toFloat(void) const
+{
+	return (static_cast<float>(_fixed_point) / (1 << _nb_frac_bit));
 }
