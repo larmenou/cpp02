@@ -6,7 +6,7 @@
 /*   By: larmenou <larmenou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 11:19:48 by larmenou          #+#    #+#             */
-/*   Updated: 2023/12/27 12:26:23 by larmenou         ###   ########.fr       */
+/*   Updated: 2024/01/03 13:56:38 by larmenou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,5 +77,5 @@ int Fixed::toInt(void) const
 
 float Fixed::toFloat(void) const
 {
-	return (static_cast<float>(_fixed_point) / (1 << _nb_frac_bit));
+	return (static_cast<float>(this->_fixed_point) / (1 << this->_nb_frac_bit));
 }
