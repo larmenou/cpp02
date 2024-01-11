@@ -6,7 +6,7 @@
 /*   By: larmenou <larmenou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 11:19:45 by larmenou          #+#    #+#             */
-/*   Updated: 2024/01/03 13:47:02 by larmenou         ###   ########.fr       */
+/*   Updated: 2024/01/11 11:21:57 by larmenou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,29 +31,29 @@ int main( void )
 	}
 	
 	{	
-		std::cout << a + b << std::endl;
-		std::cout << a - b << std::endl;
-		std::cout << a * b << std::endl;
-		std::cout << a / b << std::endl;
+		std::cout << "a + b = " << a + b << std::endl;
+		std::cout << "a - b = " << a - b << std::endl;
+		std::cout << "a * b = " << a * b << std::endl;
+		std::cout << "a / b = " << a / b << std::endl;
 	}
 
 	{
-		std::cout << (a > b) << std::endl;
-		std::cout << (b > a) << std::endl;
-		std::cout << (a >= b) << std::endl;
-		std::cout << (a < b) << std::endl;
-		std::cout << (a <= b) << std::endl;
-		std::cout << (a == b) << std::endl;
-		std::cout << (a != b) << std::endl;
+		std::cout << "a > b : " << (a > b) << std::endl;
+		std::cout << "b > a : " << (b > a) << std::endl;
+		std::cout << "a >= b : " << (a >= b) << std::endl;
+		std::cout << "a < b : " << (a < b) << std::endl;
+		std::cout << "a <= b : " << (a <= b) << std::endl;
+		std::cout << "a == b : " << (a == b) << std::endl;
+		std::cout << "a != b : " << (a != b) << std::endl;
 	}
 
 	{
 		Fixed a;
-		std::cout << a << std::endl;
-		std::cout << ++a << std::endl;
-		std::cout << a << std::endl;
-		std::cout << a++ << std::endl;
-		std::cout << a << std::endl;
+		std::cout << "a is " << a << std::endl;
+		std::cout << "a is " << ++a << std::endl;
+		std::cout << "a is " << a << std::endl;
+		std::cout << "a is " << a++ << std::endl;
+		std::cout << "a is " << a << std::endl;
 	}
 	return 0;
 }

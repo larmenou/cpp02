@@ -6,7 +6,7 @@
 /*   By: larmenou <larmenou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 11:19:58 by larmenou          #+#    #+#             */
-/*   Updated: 2023/12/12 10:00:34 by larmenou         ###   ########.fr       */
+/*   Updated: 2024/01/10 09:32:48 by larmenou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@ class Fixed
 		Fixed(Fixed& copy);
 		~Fixed();
 		Fixed& operator=(Fixed& copy);
+		
 		int getRawBits(void) const ;
 		void setRawBits(int const raw);
 		

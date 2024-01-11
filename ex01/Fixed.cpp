@@ -6,7 +6,7 @@
 /*   By: larmenou <larmenou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 11:19:48 by larmenou          #+#    #+#             */
-/*   Updated: 2024/01/03 13:56:38 by larmenou         ###   ########.fr       */
+/*   Updated: 2024/01/10 13:05:31 by larmenou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ Fixed::Fixed(const int i)
 Fixed::Fixed(const float f)
 {
 	std::cout << "Float constructor called" << std::endl;
-	this->_fixed_point = static_cast<int>(f * (1 << _nb_frac_bit));
+	this->_fixed_point = (int)roundf(f * (1 << _nb_frac_bit));
 	return ;
 }
 

@@ -6,7 +6,7 @@
 /*   By: larmenou <larmenou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 14:11:49 by larmenou          #+#    #+#             */
-/*   Updated: 2024/01/05 10:20:46 by larmenou         ###   ########.fr       */
+/*   Updated: 2024/01/05 10:36:04 by larmenou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ class Point
 	public:
 		Point();
 		Point(const float x, const float y);
+		Point(Fixed x, Fixed y);
 		Point(const Point& copy);
 		Point& operator=(Point& copy);
 		bool operator==(const Point& a) const;

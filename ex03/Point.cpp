@@ -6,7 +6,7 @@
 /*   By: larmenou <larmenou@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/03 14:12:02 by larmenou          #+#    #+#             */
-/*   Updated: 2024/01/05 10:01:49 by larmenou         ###   ########.fr       */
+/*   Updated: 2024/01/05 10:36:23 by larmenou         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,11 @@ Point::Point() : _x(0), _y(0)
 }
 
 Point::Point(const float x, const float y) : _x(x), _y(y)
+{
+	return ;
+}
+
+Point::Point(Fixed x, Fixed y) : _x(x), _y(y)
 {
 	return ;
 }
